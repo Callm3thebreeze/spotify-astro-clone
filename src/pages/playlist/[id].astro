@@ -1,7 +1,5 @@
 ---
-import MusicsTable from "@/components/MusicsTable.astro";
 import Layout from "../../layouts/Layout.astro";
-import CardPlayButton from "@/components/CardPlayButton.astro";
 import { allPlaylists, songs } from "@/lib/data";
 
 const { id } = Astro.params;
@@ -18,7 +16,7 @@ const playListSongs = songs.filter(
     class="relative flex flex-col h-full bg-zinc-900 overflow-x-hidden"
     transition:name=`playlist ${id} box`
   >
-    <!-- <Salu2 /> -->
+    <!-- <PageHeader /> -->
 
     <header class="flex flex-row gap-8 px-6 mt-12">
       <picture class="aspect-square w-52 h-52 flex-none">
@@ -53,9 +51,7 @@ const playListSongs = songs.filter(
       </div>
     </header>
 
-    <div class="pl-6 pt-6">
-      <CardPlayButton client:load id={id} size="large" />
-    </div>
+    <div class="pl-6 pt-6"></div>
 
     <div class="relative z-10 px-6 pt-10"></div>
 
@@ -63,5 +59,7 @@ const playListSongs = songs.filter(
       class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-[1]"
     >
     </div>
+
+    <section class="p-6"></section>
   </div>
 </Layout>
